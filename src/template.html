@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+</head>
+<body>
+
+
+
+
+    <div class="sideBar">
+
+        <div class="sidebarContent">
+            <img src="home-account.svg" class="Logo">
+            <button type="button" class="home" id="home">HOME</button>
+        </div>
+
+        <div class = "sidebarContent">
+            <img src="home-account.svg" class="Logo">
+            <div class="projects" id="projects">My Projects</div>
+        </div>
+
+        <div class = "sidebarContent">
+            <img src="home-account.svg" class="Logo">
+            <button class="messages" id="addProject">Add Project</div>
+            </button>
+
+            <div id="projectHolder">
+
+
+                
+            </div>
+
+
+        
+
+    </div>
+
+
+
+    <div class="contentArea">
+
+
+        <div class="formContainer" id="formContainer">
+
+        <form id="newProjectForm" >
+
+            <div class="addProjectTitle">Add Project!</div>
+
+            <div class="nameContainer" >
+
+                        <label for="title">Name</label>
+                        <br>
+                        <input type="text" id="name" name="name" placeholder="Project Name" required>
+                        <br>
+
+                </div>
+
+                <button type="button" id="closeBtn">Close</button>
+        
+                <button type="submit" id="submitBtn">Click Me!</button>
+                
+        </form>
+        </div>
+
+        
+        <div id="todoModal" class="modal">
+
+
+
+                <form id="newTodoForm" >
+        
+                    <div class="addTitle">Add TASK!</div>
+        
+                    <div class="nameContainer" >
+        
+                                <label for="title">Task Name</label>
+                                <br>
+                                <input type="text" id="todoName" name="todoName" placeholder="Task Name" required>
+                                <br>
+        
+                        </div>
+
+                        <div class="descriptionContainer" >
+        
+                            <label for="description">Description</label>
+                            <br>
+                            <input type="text" id="todoDescription" name="todoDescription" placeholder="description">
+                            <br>
+    
+                    </div>
+
+
+                    <div class="descriptionContainer" >
+        
+                        <label for="todoPriority">Priority</label>
+                        <br>
+                        <input type="textarea" id="todoPriority" name="todoPriority" placeholder="Priority">
+                        <br>
+
+                </div>
+        
+                        <button type="button" id="todoCloseBtn">Close</button>
+                
+                        <button type="submit" id="todoSubmitBtn">Click Me!</button>
+                    </form>
+
+        </div>
+
+
+
+        <div class="contentContainer">
+
+            <div class="headerContainer">
+                <div class="header">HOME</div>
+            </div>
+
+            <div class="feedContainer" id="feedContainer">
+                <div class="feed">Feed Placeholder</div>
+            </div>
+    
+        </div>
+
+
+    </div>
+
+
+    
+</body>
+</html>
