@@ -1,33 +1,31 @@
 
 import "./styles.css";
-
 import {renderProjects, projectClicked, newTaskSubmitted, addProjectButton, homeBtn,  newProjectTab } from "./UI";
-import { assignTasks, getProjectLibrary, getTodoLibrary} from "./project";
+import {  initializeProjectLibrary, initializeTodoLibrary} from "./project";
+import { storeProjectLibrary } from "./storage";
 
-
-
-function initializeDOM(){
+//Initialize page
+function initialize(){
+initializeProjectLibrary();
+initializeTodoLibrary();
     renderProjects();
+    storeProjectLibrary();
    projectClicked();
     newTaskSubmitted();
     addProjectButton();
 }
-initializeDOM();
+initialize();
 
-
+//add Event Listeners to initalized page
 function navController(){
     const homeButton = document.getElementById('home')
     homeButton.addEventListener('click', function(){
         homeBtn();
     })
 
-
     const addProject = document.getElementById('addProject')
     addProject.addEventListener('click', function(){
         newProjectTab();
     })
-    
 }
 navController();
-
-

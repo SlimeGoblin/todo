@@ -1,25 +1,45 @@
 
 
-import { projectFormValues , projectClicked, initialProject} from "./UI";
-import { storeProjectLibrary, storeTodoLibrary} from "./storage";
+import { storeTodoLibrary, getProjectLibraryJSON, getTodoLibraryJSON} from "./storage";
 
 
-const projectLibrary = [];
+var projectLibrary = [];
 
-const todoLibrary=[];
+
+var todoLibrary=[];
+
+function initializeProjectLibrary(){
+    if(getProjectLibraryJSON() != null ){
+    projectLibrary = getProjectLibraryJSON();
+    console.log('newlib')
+    console.log(projectLibrary)
+    }
+}
+
+function initializeTodoLibrary(){
+    if(getTodoLibraryJSON() != null){
+        todoLibrary = getTodoLibraryJSON();
+        console.log('newtodo')
+        console.log(todoLibrary)
+    }
+}
+
+
+
 
         // project constructor-Fine
-    function Project(name){
+    function Project(name, remove){
         this.name = name;
+        this.remove = false
     }
 
         //todo constructor-Fine
-function ToDo(title, description, priority,project){
+function ToDo(title, due, complete,project, remove){
     this.title=title;
-    this.description = description;
-    this.priority = priority;
-
+    this.due = due;
+    this.complete = false;
     this.project = project;
+    this.remove = false
 }
 
 
@@ -29,8 +49,11 @@ function ToDo(title, description, priority,project){
 
 
  
-            var todo1 = new ToDo('go for a run', "4 mile run", "medium", "Test Project")
+            var todo1 = new ToDo('go for a run', "2025-11-02", "medium", "Test Project")
             todoLibrary.push(todo1);
+
+
+
 
 
 //On submitting forms we can create projects and todo's in the same way
@@ -46,6 +69,7 @@ function addProjectToLibrary(){
       projectToLibrary(newProject)
       const projectName = projectLibrary[0].name
       console.log(projectLibrary)
+
       return (projectName)
   }
   
@@ -53,7 +77,7 @@ function addProjectToLibrary(){
 function constructTodo(activeProject){
     const newTodo = new ToDo(
         document.getElementById('todoName').value,
-        document.getElementById('todoDescription').value,
+        document.getElementById('todoDueDate').value,
         document.getElementById('todoPriority').value,
         activeProject
         )
@@ -67,7 +91,17 @@ function addTodoToLibrary(activeProject){
     const newTodo = constructTodo(activeProject);
       todoToLibrary(newTodo)
       console.log(todoLibrary)
+      storeTodoLibrary();
       return (newTodo)
+}
+
+function editTodoLibrary(todo, name, date, complete){
+    console.log(todo.due)
+    console.log(name)
+    todo.title = document.getElementById('editTodoName').value
+    todo.due = document.getElementById('editTodoDueDate').value
+
+
 }
 
 
@@ -87,4 +121,63 @@ function assignTasks(todoLibrary, activeProject){
     return(newArray)
 }
 
-export{addProjectToLibrary, addTodoToLibrary, assignTasks, getProjectLibrary, getTodoLibrary}
+function removeTodofromLibrary(){
+    for( let i = 0; i <todoLibrary.length; i++){
+
+        if(todoLibrary[i].remove == true)
+        todoLibrary.splice([i], 1)
+
+    }
+}
+
+
+//Delete Project with its Todos
+//Consider just putting render Projects into this because they alwasy have to go together
+
+
+function removeProjectfromLibrary(){
+var deletedProject = ''
+
+    for( let i = 0; i <projectLibrary.length; i++){
+       
+        if(projectLibrary[i].remove == true){
+        deletedProject = projectLibrary[i].name
+        projectLibrary.splice([i], 1)
+
+
+
+
+        console.log(projectLibrary)
+        console.log(todoLibrary)
+        console.log(deletedProject)
+
+        }
+
+    }
+
+    for (let i = 0; i<todoLibrary.length; i++){
+        if(todoLibrary[i].project == deletedProject){
+            todoLibrary[i].remove = true
+        }
+    }
+
+
+
+}
+
+// Complete Project Toggle
+
+function toggleCompleteTask(tog){
+   if (tog== false){
+    tog = true
+   }
+   else{
+    return false
+   }
+return tog
+}
+
+
+
+
+export{addProjectToLibrary, addTodoToLibrary, assignTasks, getProjectLibrary, getTodoLibrary, removeTodofromLibrary, removeProjectfromLibrary, toggleCompleteTask, editTodoLibrary, projectLibrary, initializeProjectLibrary, initializeTodoLibrary}

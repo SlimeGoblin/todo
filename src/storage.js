@@ -1,21 +1,33 @@
-import { getProjectLibrary, getTodoLibrary } from "./project"
+import { getProjectLibrary, getTodoLibrary} from "./project"
 
 
+
+//store and get todo library
 const storeTodoLibrary = () =>{
     const todoStringify = JSON.stringify(getTodoLibrary())
-    localStorage.setItem(todoJSON, todoStringify )
-}
+    localStorage.setItem("todoJSON", todoStringify )
 
-const storeProjectLibrary = ()=>{
-    const projectStorage= jSON.stringify(getProjectLibrary())
 }
 
 const getTodoLibraryJSON = () =>{
-    localStorage.getItem(getTodoLibrary())
+    const getTodoJSON = localStorage.getItem("todoJSON")
+    const todoJSON = JSON.parse(getTodoJSON)
+    console.log(todoJSON)
+    
+    return todoJSON
+}
+
+//story and get project library
+const storeProjectLibrary = ()=>{
+    const projectStringify= JSON.stringify(getProjectLibrary())
+    localStorage.setItem("projectJSON",projectStringify)
 }
 
 const getProjectLibraryJSON= ()=>{
-    localStorage.getItem(getProjectLibrary())
+   const getProjectJSON =  localStorage.getItem("projectJSON")
+   const projectJSON = JSON.parse(getProjectJSON)
+
+   return projectJSON
 }
 
 

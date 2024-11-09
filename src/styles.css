@@ -6,13 +6,13 @@ body{
     grid-template-columns: 1fr 5fr;
 }
 
-.sidebarContainer{
-    background-color: red;;
-}
+
 
 .sideBar{
-    background-color: red;
+    background-color: #608BC1;
     padding-top: 1em;
+    padding-top: 3.8em;;
+
 }
 
 .sidebarContent{
@@ -22,7 +22,54 @@ body{
     padding-bottom: 1.5em;
 }
 
-.sideBar img{
+#home, #addProject{
+background: none;
+border: none;
+font-weight: bold;
+font-size: 1em;
+color:#CBDCEB;
+
+}
+
+
+#projectTab{
+    margin: 1em;
+    width: 20em;
+    height: 4em;;
+    border-radius: 1em;;
+    display: flex;
+    align-items: center;
+    background-color: #CBDCEB;
+
+}
+
+.taskButton{
+
+        margin: 1em;
+        height: 3em;;
+        border-radius: 1em;;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #608BC1;
+        border: 2px solid white;
+    
+}
+
+.newProject:hover{
+    opacity: .5;
+}
+
+.activeTab{
+    border: 5px solid white;
+    box-shadow: 5px 5px;
+}
+
+.newTabTitle{
+    flex-grow: 3;
+}
+
+.sideBar img, #deleteButton, .editButton{
     height: 1.5em;
     display: flex;
     justify-self: flex-end;
@@ -33,21 +80,48 @@ body{
     flex-direction: column;
 }
 
+.headerContainer{
+    font-size:3em;
+}
 
 
 .contentArea{
-    background-color: blue;
+    background-color: #F3F3E0
 }
 
-.formContainer{
-    background-color: yellow;;
+.formContainer, #todoModal, #editTodoModal{
+    background-color: #CBDCEB;
         display: none;
         position: fixed;
         bottom: 50%;
         left: 50%;
-        border: 3px solid #f1f1f1;
         z-index: 9;
+        padding: 1em;
+        border-radius: 1em;;
+        border: 2px solid black;
+        box-shadow: 2px 2px 2px;
+
+        font-size: 1.5em;
+        text-align: center;
 }
+
+.formContainer button{
+    font-size: .8em;
+    border-radius: .3em;
+}
+
+.addProjectTitle{
+    font-size: 2em;
+    padding-bottom: 10px;
+}
+
+#name{
+    border-radius: 3px;
+    height: 1.5em;
+    margin-bottom: 10px;;
+}
+
+
 
 .contentContainer{
     display: grid;
@@ -58,26 +132,36 @@ body{
 
 .headerContainer{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding-top: 1em;
-    background-color: beige
+    background-color: #F3F3E0;
+
 }
 
 .feedContainer{
     display: flex;
     flex-direction: column;
+    margin-left: 10em;
+    margin-right: 10em;
 }
 
-.feed{
-    background-color: purple;
+
+
+.taskButton{
+    width: 20em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    border-radius: .5em;;
+    margin-bottom: 2em;;
 }
 
-.projectFeed{
-    background-color: yellow;;
-}
+
+
 
 .modal{
-    background-color: yellow;;
+    background-color: #133E87;
     display: none;
     position: fixed;
     bottom: 50%;
@@ -86,5 +170,103 @@ body{
     z-index: 1;
 
 
-
 }
+
+.taskButton:hover{
+    opacity: .5;
+}
+
+.todoHolder{
+    background-color: #CBDCEB;
+    height: 3em;
+    margin-bottom: 1em;
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 1em;;
+}
+
+
+
+
+.todoTitle{
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.editButton, #deleteButton{
+    width: 50%;
+    justify-self: center;
+}
+.editButton:hover, #deleteButton:hover{
+    opacity: .5;
+}
+
+
+.completed{
+    text-decoration: line-through;
+}
+
+
+
+  .checkBoxContainer{
+    display: flex;
+
+  }
+
+  .projectHeader{
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* The container */
+.checkBoxContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1em;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .checkBoxContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 15px;
+    width: 15px;
+    background-color: #eee;
+    align-self: center;
+    border: 2px solid black;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checkBoxContainer:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+
+
+  
+
+  .checkBoxContainer{
+    display: flex;
+    justify-self: center;
+    top: .2em;
+  }
