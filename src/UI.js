@@ -1,8 +1,10 @@
 //Organize code better
+import { addProjectToLibrary, addTodoToLibrary, getTodoLibrary, getProjectLibrary, assignTasks, removeTodofromLibrary , removeProjectfromLibrary, toggleCompleteTask,editTodoLibrary} from "./project";
+import { getProjectLibraryJSON, storeProjectLibrary, storeTodoLibrary } from "./storage";
 
 
-import trashImage from "./trash-2.svg"
-import editImage from "./edit.svg"
+import trashImage from "./imgs/trash-2.svg"
+import editImage from "./imgs/edit.svg"
 
 import { todaysDate } from "./date";
 
@@ -70,8 +72,7 @@ function addProjectButton(){
     })
 }
 
-import { addProjectToLibrary, addTodoToLibrary, getTodoLibrary, getProjectLibrary, assignTasks, removeTodofromLibrary , removeProjectfromLibrary, toggleCompleteTask,editTodoLibrary} from "./project";
-import { getProjectLibraryJSON, getTodoLibraryJSON, storeProjectLibrary, storeTodoLibrary } from "./storage";
+
 
 //When Project Form is submitted, adds Tab to Project Container
 
