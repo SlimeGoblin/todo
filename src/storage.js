@@ -1,4 +1,5 @@
-import { getProjectLibrary, getTodoLibrary} from "./project"
+import { getProjectLibrary} from "./project"
+import { getTodoLibrary } from "./task"
 
 
 
@@ -32,5 +33,4 @@ const getProjectLibraryJSON= ()=>{
 
 
 export {storeTodoLibrary, storeProjectLibrary, getTodoLibraryJSON, getProjectLibraryJSON}
-
 

@@ -7,7 +7,7 @@ if(dateInput !== ''){
     const parsedData = parse(dateInput, dateFormat, new Date())
     var newParsed = new Date(parsedData)
     const extraFried = format((newParsed), 'MM/dd/yyyy')
-    return(extraFried)
+    return(`Due: ${extraFried}`)
 }
 else{
     return ''

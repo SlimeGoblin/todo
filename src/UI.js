@@ -1,6 +1,7 @@
 //Organize code better
-import { addProjectToLibrary, addTodoToLibrary, getTodoLibrary, getProjectLibrary, assignTasks, removeTodofromLibrary , removeProjectfromLibrary, toggleCompleteTask,editTodoLibrary} from "./project";
+import { addProjectToLibrary, getProjectLibrary, assignTasks, removeProjectfromLibrary, toggleCompleteTask,editTodoLibrary} from "./project";
 import { getProjectLibraryJSON, storeProjectLibrary, storeTodoLibrary } from "./storage";
+import { getTodoLibrary , addTodoToLibrary, removeTodofromLibrary} from "./task";
 
 
 import trashImage from "./imgs/trash-2.svg"
@@ -133,12 +134,11 @@ function renderProjects(){
     newTabDelete.classList.add('projectDeleteButton')
 
     newTabDelete.addEventListener('click', function(){
-        const contentContainer = document.querySelector('.contentContainer')
         projectLib[i].remove = true;
         deletedProject = projectLib[i].name 
         removeProjectfromLibrary();
-        renderProjects();
         removeTodofromLibrary()
+        renderProjects();
         renderTodos();
         homeBtn();
     })
@@ -270,8 +270,7 @@ function renderTodos(){
 
         const todoDueDate = document.createElement("div");
         const fry = todaysDate(taskArray[i].due)
-        todoDueDate.textContent = `Due: ${fry}`
-    
+        todoDueDate.textContent = fry    
 
         //Checkbox or completed
 

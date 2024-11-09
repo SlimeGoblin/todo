@@ -1,8 +1,9 @@
 
 import "./styles.css";
 import {renderProjects, projectClicked, newTaskSubmitted, addProjectButton, homeBtn,  newProjectTab } from "./UI";
-import {  initializeProjectLibrary, initializeTodoLibrary} from "./project";
-import { storeProjectLibrary } from "./storage";
+import {  initializeProjectLibrary} from "./project";
+import { initializeTodoLibrary } from "./task"
+import { storeProjectLibrary, storeTodoLibrary } from "./storage";
 
 //Initialize page
 function initialize(){
@@ -10,6 +11,7 @@ initializeProjectLibrary();
 initializeTodoLibrary();
     renderProjects();
     storeProjectLibrary();
+    storeTodoLibrary();
    projectClicked();
     newTaskSubmitted();
     addProjectButton();
