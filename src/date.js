@@ -1,6 +1,6 @@
 
 import { format, parse} from "date-fns"
-
+//format date
 function todaysDate(dateInput){
 if(dateInput !== ''){
     const dateFormat = "yyyy-MM-dd"

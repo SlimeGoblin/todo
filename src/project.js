@@ -6,7 +6,7 @@ import { removeProjectTodos } from "./task";
 
 var projectLibrary = [];
 
-
+//initilize Project Library
 function initializeProjectLibrary(){
 
     if(getProjectLibraryJSON() != null ){
@@ -31,7 +31,7 @@ const constructProject =()=>(new Project(document.getElementById('name').value))
 const projectToLibrary = (project)=>{
     (projectLibrary.push(project))
 }
-
+//add project to library
 function addProjectToLibrary(){
     const newProject = constructProject();
       projectToLibrary(newProject)
@@ -40,7 +40,7 @@ function addProjectToLibrary(){
 
       return (projectName)
   }
-  
+  //edit todoLibrary
 function editTodoLibrary(todo, name, date, complete){
     console.log(todo.due)
     console.log(name)

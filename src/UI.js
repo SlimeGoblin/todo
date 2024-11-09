@@ -1,4 +1,4 @@
-//Organize code better
+
 import { addProjectToLibrary, getProjectLibrary, assignTasks, removeProjectfromLibrary, toggleCompleteTask,editTodoLibrary} from "./project";
 import { getProjectLibraryJSON, storeProjectLibrary, storeTodoLibrary } from "./storage";
 import { getTodoLibrary , addTodoToLibrary, removeTodofromLibrary} from "./task";
