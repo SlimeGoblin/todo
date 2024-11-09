@@ -46,7 +46,7 @@ function addTodoToLibrary(activeProject){
 }
 
 
-        var todo1 = new ToDo('go for a run', "2025-11-02", "medium", "Test Project")
+        var todo1 = new ToDo('run', "2025-11-02", "medium", "Test Project")
         todoLibrary.push(todo1);
 
         function removeTodofromLibrary(){
