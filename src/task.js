@@ -27,7 +27,7 @@ function constructTodo(activeProject){
     const newTodo = new ToDo(
         document.getElementById('todoName').value,
         document.getElementById('todoDueDate').value,
-        document.getElementById('todoPriority').value,
+        "",
         activeProject
         )
         return newTodo
