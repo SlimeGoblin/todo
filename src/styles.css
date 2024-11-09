@@ -187,6 +187,19 @@ color:#CBDCEB;
     border: 2px solid black;
     border-radius: 1em;;
 }
+@media (max-width: 450px){
+    .todoHolder{
+        width: 400px;
+        background-color: red;
+    }
+ }
+
+ @media (max-width: 450px) {
+    .todoHolder img, img#deleteButton{
+        width: 50px;
+    }
+    
+ }
 
 
 
