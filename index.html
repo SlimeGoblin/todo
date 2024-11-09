@@ -1,1 +1,164 @@
-<head><script defer src="main.js"></script></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+<script defer src="main.js"></script></head>
+<body>
+
+
+
+
+    <div class="sideBar">
+
+        <div class="sidebarContent">
+            <img src="3e995b1fa6c9a2c09ac7.svg" class="Logo">
+            <button type="button" class="home" id="home">My Projects</button>
+        </div>
+
+
+
+        <div class = "sidebarContent">
+            <img src="6ccef3018bcc6d53d56e.svg" class ="Logo">
+            <button class="messages" id="addProject">Add Project</div>
+            </button>
+
+            <div id="projectHolder">
+
+
+                
+            </div>
+
+
+        
+
+    </div>
+
+
+
+    <div class="contentArea">
+
+
+        <div class="formContainer" id="formContainer">
+
+        <form id="newProjectForm" >
+
+            <div class="addProjectTitle">Add Project!</div>
+
+            <div class="nameContainer" >
+
+                        <label for="title">Project Name</label>
+                        <br>
+                        <input type="text" id="name" name="name" placeholder="Project Name" required>
+                        <br>
+
+                </div>
+
+                <button type="button" id="closeBtn">Close</button>
+        
+                <button type="submit" id="submitBtn">Add Project!</button>
+                
+        </form>
+        </div>
+
+        
+        <div id="todoModal" class="modal" >
+
+
+
+                <form id="newTodoForm" >
+        
+                    <div class="addTitle">Add TASK!</div>
+        
+                    <div class="nameContainer" >
+        
+                                <label for="title">Task Name</label>
+                                <br>
+                                <input type="text" id="todoName" name="todoName" placeholder="Task Name" required>
+                                <br>
+        
+                        </div>
+
+                        <div class="dueDateContainer" >
+        
+                            <label for="dueDate">Due in: 69 Days</label>
+                            <br>
+                            <input type="date" id="todoDueDate" name="todoDueDate" >
+                            <br>
+    
+                    </div>
+
+
+                    <div class="descriptionContainer" >
+        
+                        <label for="todoPriority">Priority</label>
+                        <br>
+                        <input type="textarea" id="todoPriority" name="todoPriority" placeholder="Priority">
+                        <br>
+
+                </div>
+        
+                        <button type="button" id="todoCloseBtn">Close</button>
+                
+                        <button type="submit" id="todoSubmitBtn">Click Me!</button>
+                    </form>
+
+        </div>
+
+        <div id="editTodoModal" class="modal">
+
+
+
+            <form id="editTodoForm" >
+    
+                <div class="addTitle">EDIT TASK!</div>
+    
+                <div class="nameContainer" >
+    
+                            <label for="title">Task Name</label>
+                            <br>
+                            <input type="text" id="editTodoName" name="editTodoName" placeholder="Task Name" required>
+                            <br>
+    
+                    </div>
+
+                    <div class="dueDateContainer" >
+    
+                        <label for="dueDate">Due Date</label>
+                        <br>
+                        <input type="date" id="editTodoDueDate" name="todoDueDate" placeholder="Due Date">
+                        <br>
+
+                </div>
+
+    
+                    <button type="button" id="editCloseBtn">Close</button>
+            
+                    <button type="submit" id="todoSubmitBtn">Click Me!</button>
+                </form>
+
+    </div>
+
+
+
+
+        <div class="contentContainer">
+
+            <div class="headerContainer">
+                <div class="projectHeader">MY PROJECTS</div>
+            </div>
+
+            <div class="feedContainer" id="feedContainer">
+            </div>
+    
+        </div>
+
+
+    </div>
+
+
+    
+</body>
+</html>
