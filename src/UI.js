@@ -23,6 +23,14 @@ function homeBtn(){
     homeHeader.textContent="MY PROJECTS"
     header.appendChild(homeHeader)
 
+    function removeMobile(x){
+        if(x.matches ){
+            renderProjects();
+        }
+    }
+    var x = window.matchMedia("(max-width: 450px)")
+    removeMobile(x);
+
     });
 }
 
@@ -374,22 +382,23 @@ makeProjectHeader(i.textContent);
 createTaskButton();
 closeTodoForm();
 
-
-
-
 //update active Project
  activeProject = i.textContent
 console.log(`active Project is: ${activeProject}`)
 
-
-
-//highlight active Project
-
-
-
 //clear todos and render all Todos
 renderTodos();
 renderProjects();
+
+//media
+
+function removeMobile(x){
+    if(x.matches ){
+        document.getElementById("projectHolder").innerHTML = ""
+    }
+}
+var x = window.matchMedia("(max-width: 450px)")
+removeMobile(x);
 
     });
 

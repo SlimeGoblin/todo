@@ -6,6 +6,21 @@ body{
     grid-template-columns: 1fr 5fr;
 }
 
+@media (max-width: 450px){
+    body{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 5fr;
+    }
+}
+
+@media (max-width: 450px){
+    .sideBar{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
 
 
 .sideBar{
@@ -200,19 +215,12 @@ color:#CBDCEB;
     
  }
 
- @media (max-width: 450px){
-    .todoTitle{
-        font-size: 1em;
-    }
- }
-
 
 
 
 .todoTitle{
     font-weight: bold;
     font-size: 1.5em;
-
 }
 
 .editButton, #deleteButton{
