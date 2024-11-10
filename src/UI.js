@@ -28,7 +28,7 @@ function homeBtn(){
             renderProjects();
         }
     }
-    var x = window.matchMedia("(max-width: 450px)")
+    var x = window.matchMedia("(max-width: 500px)")
     removeMobile(x);
 
     });
@@ -389,16 +389,6 @@ console.log(`active Project is: ${activeProject}`)
 //clear todos and render all Todos
 renderTodos();
 renderProjects();
-
-//media
-
-function removeMobile(x){
-    if(x.matches ){
-        document.getElementById("projectHolder").innerHTML = ""
-    }
-}
-var x = window.matchMedia("(max-width: 450px)")
-removeMobile(x);
 
     });
 
