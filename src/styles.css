@@ -13,13 +13,6 @@ body{
     }
 }
 
-@media (max-width: 500px){
-    .sideBar{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-}
 
 
 

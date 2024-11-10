@@ -25,6 +25,10 @@ function homeBtn(){
 
     function removeMobile(x){
         if(x.matches ){
+            var myProjectMedia = document.querySelector(".sideBar");
+            myProjectMedia.style.display = "flex"
+            myProjectMedia.style.flexDirection = "row"
+            myProjectMedia.style.flexWrap = "wrap"
             renderProjects();
         }
     }
@@ -389,6 +393,8 @@ console.log(`active Project is: ${activeProject}`)
 //clear todos and render all Todos
 renderTodos();
 renderProjects();
+
+
 
     });
 
